@@ -1,0 +1,6 @@
+Kernel panic in run: PANIC at ../../lib/kernel/list.c:171 in list_insert(): assertion `is_interior (before) || is_tail (before)' failed.
+Call stack: 0xc0029c76 0x736e695f
+Translation of call stack:
+In kernel.o:
+0xc0029c76: debug_panic (.../../lib/kernel/debug.c:38)
+0x736e695f: (unknown)

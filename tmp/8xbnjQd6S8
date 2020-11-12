@@ -1,0 +1,6 @@
+Kernel panic in run: PANIC at ../../lib/string.c:330 in strlcpy(): assertion `dst != NULL' failed.
+Call stack: 0xc0029c76 0x797063
+Translation of call stack:
+In kernel.o:
+0xc0029c76: debug_panic (.../../lib/kernel/debug.c:38)
+0x00797063: (unknown)
