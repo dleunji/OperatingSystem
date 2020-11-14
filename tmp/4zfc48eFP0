@@ -1,0 +1,6 @@
+Kernel panic in run: PANIC at ../../filesys/inode.c:83 in inode_create(): assertion `sizeof *disk_inode == BLOCK_SECTOR_SIZE' failed.
+Call stack: 0xc0029c86 0x72635f65
+Translation of call stack:
+In kernel.o:
+0xc0029c86: debug_panic (.../../lib/kernel/debug.c:38)
+0x72635f65: (unknown)

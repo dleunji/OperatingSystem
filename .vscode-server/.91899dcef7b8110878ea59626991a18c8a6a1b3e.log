@@ -10,200 +10,25 @@
 
 IP Address: 163.239.27.233
 IP Address: 172.30.10.10
-Extension host agent listening on 36769
+Extension host agent listening on 43131
 
 
-[23:09:56] Extension host agent started.
-[23:09:56] [127.0.0.1][6eede796][ManagementConnection] New connection established.
-[23:09:56] [127.0.0.1][36f3087d][ExtensionHostConnection] New connection established.
+[14:09:00] Extension host agent started.
+[14:09:01] [127.0.0.1][5430caf4][ManagementConnection] Unknown reconnection token.
+Error: write EPIPE
+    at WriteWrap.onWriteComplete [as oncomplete] (internal/stream_base_commons.js:83:16) {
+  errno: 'EPIPE',
+  code: 'EPIPE',
+  syscall: 'write'
+}
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
+    at process.emit (events.js:200:13)
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
+    at process.emit (events.js:200:13)
+[14:20:19] [127.0.0.1][6565cecf][ManagementConnection] New connection established.
+[14:20:19] [127.0.0.1][fa43fe7c][ExtensionHostConnection] New connection established.
 bash: cannot set terminal process group (-1): Inappropriate ioctl for device
 bash: no job control in this shell
-[23:09:57] [127.0.0.1][36f3087d][ExtensionHostConnection] <1385766> Launched Extension Host Process.
-Error: write EPIPE
-    at WriteWrap.onWriteComplete [as oncomplete] (internal/stream_base_commons.js:83:16) {
-  errno: 'EPIPE',
-  code: 'EPIPE',
-  syscall: 'write'
-}
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-[01:34:11] [127.0.0.1][6eede796][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
-[02:47:03] [127.0.0.1][6eede796][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
-[02:47:03] [127.0.0.1][60bbaf95][ManagementConnection] New connection established.
-[02:47:03] [127.0.0.1][e0026334][ExtensionHostConnection] New connection established.
-[02:47:03] [127.0.0.1][e0026334][ExtensionHostConnection] <1416303> Launched Extension Host Process.
-[02:52:03] [127.0.0.1][6eede796][ManagementConnection] The reconnection short grace time of 5m has expired, so the connection will be disposed.
-[02:52:04] [127.0.0.1][36f3087d][ExtensionHostConnection] <1385766> Extension Host Process exited with code: 0, signal: null.
-Error: write EPIPE
-    at WriteWrap.onWriteComplete [as oncomplete] (internal/stream_base_commons.js:83:16) {
-  errno: 'EPIPE',
-  code: 'EPIPE',
-  syscall: 'write'
-}
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-[03:12:40] [127.0.0.1][60bbaf95][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
-[03:14:00] [127.0.0.1][60bbaf95][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
-[03:14:00] [127.0.0.1][60bbaf95][ManagementConnection] The client has reconnected.
-[03:14:00] [127.0.0.1][e0026334][ExtensionHostConnection] The client has reconnected.
-[04:05:02] [127.0.0.1][f4573022][ManagementConnection] New connection established.
-[04:05:02] [127.0.0.1][46667343][ExtensionHostConnection] New connection established.
-[04:05:02] [127.0.0.1][46667343][ExtensionHostConnection] <1433816> Launched Extension Host Process.
-Error: write EPIPE
-    at WriteWrap.onWriteComplete [as oncomplete] (internal/stream_base_commons.js:83:16) {
-  errno: 'EPIPE',
-  code: 'EPIPE',
-  syscall: 'write'
-}
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-[04:12:46] [127.0.0.1][60bbaf95][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
-Error: write EPIPE
-    at WriteWrap.onWriteComplete [as oncomplete] (internal/stream_base_commons.js:83:16) {
-  errno: 'EPIPE',
-  code: 'EPIPE',
-  syscall: 'write'
-}
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-[06:11:09] [127.0.0.1][f4573022][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
-[06:40:44] [127.0.0.1][60bbaf95][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
-[06:40:44] [127.0.0.1][f4573022][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
-[06:40:44] [127.0.0.1][c71a101d][ManagementConnection] New connection established.
-[06:40:44] [127.0.0.1][525284b1][ExtensionHostConnection] New connection established.
-[06:40:44] [127.0.0.1][525284b1][ExtensionHostConnection] <1442315> Launched Extension Host Process.
-[06:45:44] [127.0.0.1][60bbaf95][ManagementConnection] The reconnection short grace time of 5m has expired, so the connection will be disposed.
-[06:45:44] [127.0.0.1][f4573022][ManagementConnection] The reconnection short grace time of 5m has expired, so the connection will be disposed.
-[06:45:45] [127.0.0.1][46667343][ExtensionHostConnection] <1433816> Extension Host Process exited with code: 0, signal: null.
-[06:45:45] [127.0.0.1][e0026334][ExtensionHostConnection] <1416303> Extension Host Process exited with code: 0, signal: null.
-Error: write EPIPE
-    at WriteWrap.onWriteComplete [as oncomplete] (internal/stream_base_commons.js:83:16) {
-  errno: 'EPIPE',
-  code: 'EPIPE',
-  syscall: 'write'
-}
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-[07:09:57] [127.0.0.1][c71a101d][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
-[07:26:28] [127.0.0.1][c71a101d][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
-[07:26:28] [127.0.0.1][c71a101d][ManagementConnection] The client has reconnected.
-[07:26:28] [127.0.0.1][525284b1][ExtensionHostConnection] The client has reconnected.
-Error: write EPIPE
-    at WriteWrap.onWriteComplete [as oncomplete] (internal/stream_base_commons.js:83:16) {
-  errno: 'EPIPE',
-  code: 'EPIPE',
-  syscall: 'write'
-}
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-[10:04:44] [127.0.0.1][c71a101d][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
-[10:22:14] [127.0.0.1][c71a101d][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
-[10:22:14] [127.0.0.1][19ecead2][ManagementConnection] New connection established.
-[10:22:14] [127.0.0.1][6582e81e][ExtensionHostConnection] New connection established.
-[10:22:14] [127.0.0.1][6582e81e][ExtensionHostConnection] <1519587> Launched Extension Host Process.
-[10:27:14] [127.0.0.1][c71a101d][ManagementConnection] The reconnection short grace time of 5m has expired, so the connection will be disposed.
-[10:27:15] [127.0.0.1][525284b1][ExtensionHostConnection] <1442315> Extension Host Process exited with code: 0, signal: null.
-[11:12:02] [127.0.0.1][19ecead2][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
-[11:12:03] [127.0.0.1][6582e81e][ExtensionHostConnection] <1519587> Extension Host Process exited with code: 0, signal: null.
-Last EH closed, waiting before shutting down
-[11:12:03] Last EH closed, waiting before shutting down
-Got delay-shutdown request while in shutdown timeout, delaying
-[11:14:21] Got delay-shutdown request while in shutdown timeout, delaying
-Cancelling previous shutdown timeout
-[11:14:21] Cancelling previous shutdown timeout
-[11:14:21] [127.0.0.1][081f87d9][ManagementConnection] New connection established.
-[11:14:21] [127.0.0.1][de3a8955][ExtensionHostConnection] New connection established.
-[11:14:21] [127.0.0.1][de3a8955][ExtensionHostConnection] <1557605> Launched Extension Host Process.
-New EH opened, aborting shutdown
-[11:19:21] New EH opened, aborting shutdown
-Error: write EPIPE
-    at WriteWrap.onWriteComplete [as oncomplete] (internal/stream_base_commons.js:83:16) {
-  errno: 'EPIPE',
-  code: 'EPIPE',
-  syscall: 'write'
-}
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-[12:05:42] [127.0.0.1][081f87d9][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
-[12:18:29] [127.0.0.1][081f87d9][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
-[12:18:29] [127.0.0.1][081f87d9][ManagementConnection] The client has reconnected.
-[12:18:29] [127.0.0.1][de3a8955][ExtensionHostConnection] The client has reconnected.
-Error: write EPIPE
-    at WriteWrap.onWriteComplete [as oncomplete] (internal/stream_base_commons.js:83:16) {
-  errno: 'EPIPE',
-  code: 'EPIPE',
-  syscall: 'write'
-}
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-[12:50:28] [127.0.0.1][081f87d9][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
-[12:50:28] [127.0.0.1][081f87d9][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
-[12:50:28] [127.0.0.1][081f87d9][ManagementConnection] The client has reconnected.
-[12:50:28] [127.0.0.1][de3a8955][ExtensionHostConnection] The client has reconnected.
-Error: write EPIPE
-    at WriteWrap.onWriteComplete [as oncomplete] (internal/stream_base_commons.js:83:16) {
-  errno: 'EPIPE',
-  code: 'EPIPE',
-  syscall: 'write'
-}
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-[13:42:19] [127.0.0.1][081f87d9][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
-[14:20:22] [127.0.0.1][081f87d9][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
-[14:20:22] [127.0.0.1][5f77c01e][ManagementConnection] New connection established.
-[14:20:22] [127.0.0.1][a5d780ad][ExtensionHostConnection] New connection established.
-[14:20:22] [127.0.0.1][a5d780ad][ExtensionHostConnection] <1723999> Launched Extension Host Process.
-[14:25:22] [127.0.0.1][081f87d9][ManagementConnection] The reconnection short grace time of 5m has expired, so the connection will be disposed.
-[14:25:23] [127.0.0.1][de3a8955][ExtensionHostConnection] <1557605> Extension Host Process exited with code: 0, signal: null.
-Error: write EPIPE
-    at WriteWrap.onWriteComplete [as oncomplete] (internal/stream_base_commons.js:83:16) {
-  errno: 'EPIPE',
-  code: 'EPIPE',
-  syscall: 'write'
-}
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-[15:53:37] [127.0.0.1][5f77c01e][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
-[16:18:47] [127.0.0.1][5f77c01e][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
-[16:18:47] [127.0.0.1][5f77c01e][ManagementConnection] The client has reconnected.
-[16:18:47] [127.0.0.1][a5d780ad][ExtensionHostConnection] The client has reconnected.
+[14:20:19] [127.0.0.1][fa43fe7c][ExtensionHostConnection] <3130306> Launched Extension Host Process.

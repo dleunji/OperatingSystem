@@ -5,6 +5,7 @@
 #include "userprog/syscall.h"
 #include "userprog/process.h"
 #include <stdio.h>
+#include <string.h>
 #include <syscall-nr.h>
 #include "threads/interrupt.h"
 #include "threads/thread.h"
@@ -284,6 +285,10 @@ int sys_open(const char *file_name){
     //printf("here3\n");
     return -1;
   }
+  if(strcmp(thread_name(),file_name) == 0){
+    file_deny_write(file);
+  }
+
   //save the file to the file descriptor
   fd->file = file;
   //printf("here4\n");
@@ -315,9 +320,12 @@ int sys_filesize(int fd){
   return ret;
 }
 
-int sys_read(int fd,void *buffer, unsigned size){
+int sys_read(int fd, void *buffer, unsigned size){
   check_user((const uint8_t *)buffer);
   check_user((const uint8_t *)buffer + size -1);
+
+  lock_acquire(&filesys_lock);
+  int ret;
 
   if(fd == 0){
     unsigned i;
@@ -326,20 +334,44 @@ int sys_read(int fd,void *buffer, unsigned size){
         sys_exit(-1);
       }
     }
+    ret = size;
   }
-  return size;
+
+  else{
+    struct file_desc* desc = find_file_desc(thread_current(),fd);
+    if(fd && desc->file){
+      ret = file_read(desc->file,buffer,size);
+    }
+    else{
+      ret = -1;
+    }
+  }
+  lock_release(&filesys_lock);
+  return ret;
 }
 
 int sys_write(int fd, const void *buffer,unsigned size){
   //printf("%d\n",size);
-  //int ret;
+  int ret;
   check_user((const uint8_t*)buffer);
   check_user((const uint8_t*)buffer + size -1);
 
+  lock_acquire(&filesys_lock);
   if(fd == 1){
     putbuf(buffer,size);
+    ret = size;
   }
-  return size;
+  else {
+    struct file_desc *desc = find_file_desc(thread_current(),fd);
+    if(desc && desc->file){
+      ret = file_write(desc->file,buffer,size);
+    }
+    else{
+      ret = -1;
+    }
+  }
+  lock_release(&filesys_lock);
+  return ret;
 }
 
 void sys_seek(int fd, unsigned position){

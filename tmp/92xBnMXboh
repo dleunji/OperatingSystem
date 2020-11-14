@@ -1,0 +1,6 @@
+Kernel panic in run: PANIC at ../../threads/synch.c:197 in lock_acquire(): assertion `!lock_held_by_current_thread (lock)' failed.
+Call stack: 0xc0029c86 0x7163615f
+Translation of call stack:
+In kernel.o:
+0xc0029c86: debug_panic (.../../lib/kernel/debug.c:38)
+0x7163615f: (unknown)
