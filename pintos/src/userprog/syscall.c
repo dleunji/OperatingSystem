@@ -14,10 +14,12 @@
 struct lock filesys_lock;
 
 void check_user(const uint8_t *addr);
-static int get_user(const uint8_t *uaddr);
+static int get_user(const uint8_t *addr);
 //static bool put_user(uint8_t *udst,uint8_t byte);
 static int read_user(void *src, void *dst, size_t bytes);
 static void syscall_handler (struct intr_frame *);
+static struct file_desc* find_file_desc(struct thread *t,int fd);
+static void is_invalid(void);
 
 void
 syscall_init (void) 
@@ -103,15 +105,16 @@ syscall_handler (struct intr_frame *f)
       f->eax = return_code;
       break;
     }
-/*
+
     case SYS_FILESIZE: //7
     {
-      int fd = (f->esp) + 4;
+      int fd;
+      read_user(f->esp+4,&fd,sizeof(fd));
       int return_code = sys_filesize(fd);
       f->eax = return_code;
       break;
     }
-*/
+
     case SYS_READ: //8
     {
       int fd;
@@ -141,6 +144,39 @@ syscall_handler (struct intr_frame *f)
       f->eax = (uint32_t) return_code;
       break;
     }
+
+    case SYS_SEEK: //10
+    {
+      int fd;
+      unsigned position;
+
+      read_user(f->esp+4, &fd, sizeof(fd));
+      read_user(f->esp+8, &position, sizeof(position));
+
+      sys_seek(fd,position);
+      break;
+    }
+
+    case SYS_TELL://11
+    {
+      int fd;
+      unsigned return_code;
+
+      read_user(f->esp+4,&fd,sizeof(fd));
+      return_code = sys_tell(fd);
+      f->eax = (uint32_t) return_code;
+      break;
+    }
+
+    case SYS_CLOSE://12
+    {
+      int fd;
+      read_user(f->esp+4, &fd, sizeof(fd));
+      sys_close(fd);
+      break;
+    }
+
+
   }
   
   //printf ("system call!\n");
@@ -174,7 +210,9 @@ pid_t sys_exec(const char *cmd_line){
   check_user((const uint8_t *)cmd_line);
   //printf("Exec : %s\n",cmd_line);
   //2. Create a new process
+  lock_acquire(&filesys_lock);
   pid_t pid = process_execute(cmd_line);
+  /*
   if(pid == PID_ERROR)
     return pid;
 
@@ -189,7 +227,8 @@ pid_t sys_exec(const char *cmd_line){
 
   if(child->orphan)
     return PID_ERROR;
-
+  */
+  lock_release(&filesys_lock);
   return  pid;
 }
 int sys_wait(pid_t pid){
@@ -206,7 +245,7 @@ bool sys_create(const char *file_name, unsigned initial_size){
   lock_acquire(&filesys_lock);
   //printf("I'm here2\n");
   bool success = filesys_create(file_name,initial_size);
-  //lock_release(&filesys_lock);
+  lock_release(&filesys_lock);
   //printf("I'm here3\n");
   return success;
 }
@@ -222,37 +261,59 @@ bool sys_remove(const char *file_name){
 }
 
 int sys_open(const char *file_name){
-  if(file_name)
+  struct file_desc* fd;
+  struct file *file;
+
+  if(!file_name)
     sys_exit(-1);
+    
   check_user((const uint8_t*)file_name);
-  struct file_desc* fd = palloc_get_page(0);
+  fd = palloc_get_page(0);
+  //printf("here0\n");
   if(!fd) 
     return -1;
+  //printf("here1\n");
 
   lock_acquire(&filesys_lock);
-  struct file *file = filesys_open(file_name);
-  if(!file){
+  //printf("%s\n",file_name);
+  file = filesys_open(file_name);
+  //printf("here2\n");
+  if(file == NULL){
     palloc_free_page(fd);
     lock_release(&filesys_lock);
+    //printf("here3\n");
     return -1;
   }
   //save the file to the file descriptor
   fd->file = file;
-  
+  //printf("here4\n");
   //no directory
   //fd_list
   struct list* fd_list = &thread_current()->file_descriptors;
-  if(!list_empty(fd_list)){
+  if(list_empty(fd_list)){
     fd->id = 3;
   }
   else{
     fd->id = (list_entry(list_back(fd_list),struct file_desc,elem)->id) + 1;
   }
   list_push_back(fd_list,&(fd->elem));
+  lock_release(&filesys_lock);
   return fd->id;
 }
 
-//int sys_filesize(int fd);
+int sys_filesize(int fd){
+  struct file_desc* desc;
+  lock_acquire(&filesys_lock);
+  desc = find_file_desc(thread_current(),fd);
+
+  if(desc == NULL){
+    lock_release(&filesys_lock);
+    return -1;
+  }
+  int ret = file_length(desc->file);
+  lock_release(&filesys_lock);
+  return ret;
+}
 
 int sys_read(int fd,void *buffer, unsigned size){
   check_user((const uint8_t *)buffer);
@@ -281,24 +342,60 @@ int sys_write(int fd, const void *buffer,unsigned size){
   return size;
 }
 
+void sys_seek(int fd, unsigned position){
+  lock_acquire(&filesys_lock);
+  struct file_desc* desc = find_file_desc(thread_current(),fd);
+  if(desc && desc->file){
+    file_seek(desc->file,position);
+  }
+  else
+    return;
+  lock_release(&filesys_lock);
+}
+
+unsigned sys_tell(int fd){
+  lock_acquire(&filesys_lock);
+  struct file_desc* desc = find_file_desc(thread_current(),fd);
+  unsigned ret;
+  if(desc && desc->file){
+    ret = file_tell(desc->file);
+  }
+  else
+    ret = -1;
+  lock_release(&filesys_lock);
+  return ret;
+}
+
+void sys_close(int fd){
+  lock_acquire(&filesys_lock);
+  struct file_desc *desc = find_file_desc(thread_current(),fd);
+  if(desc && desc->file){
+    file_close(desc->file);
+    list_remove(&(desc->elem));
+    palloc_free_page(desc);
+  }
+  lock_release(&filesys_lock);
+}
+
 ///////////////////////////////////////
 /////////////Memory Access/////////////
 ///////////////////////////////////////
 
 void check_user(const uint8_t *addr){
-  if(!is_user_vaddr(addr)){
-    sys_exit(-1);
+  if(get_user(addr) == -1){
+    is_invalid();
   }
 }
 
-static int get_user(const uint8_t *uaddr){
-  if(!((void*)uaddr < PHYS_BASE)){
+static int get_user(const uint8_t *addr){//address must be below PHYS_BASE
+  if(!is_user_vaddr((void*)addr)){
+  //if(!((void*)uaddr < PHYS_BASE)){
     return -1;
   }
-
+  //printf("address : %d\n",*addr);
   int result;
   asm("movl $1f, %0; movzbl %1, %0; 1:"
-      : "=&a"(result): "m"(*uaddr));
+      : "=&a"(result): "m"(*addr));
   return result;
 }
 /*
@@ -307,7 +404,6 @@ static bool put_user(uint8_t *udst,uint8_t byte){
   if(!((void*)udst < PHYS_BASE)){
     return false;
   }
-
   asm("movl $lf, %0; movb %b2, %1; 1:"
       : "=&a" (error_code), "=m" (*udst) : "q"(byte));
   return error_code != -1;
@@ -320,10 +416,33 @@ static int read_user(void *src, void *dst, size_t bytes){
   for(i=0;i < bytes;i++){
     value = get_user(src + i);
     if(value == -1)//invalide memory access
-      sys_exit(-1);
+      is_invalid();
     
     *(char*)(dst + i) = value & 0xff;
   }
   return (int)bytes;
 }
 
+static struct file_desc* find_file_desc(struct thread *t,int fd){
+  ASSERT(t!=NULL);
+  if(fd < 3){
+    return NULL;
+  }
+
+  struct list_elem *e;
+  if(!list_empty(&t->file_descriptors)){
+    for(e = list_begin(&t->file_descriptors);e !=list_end(&t->file_descriptors);e = list_next(e)){
+      struct file_desc *desc = list_entry(e, struct file_desc, elem);
+      if(desc -> id == fd){
+        return desc;
+      }
+    }
+  }
+  return NULL;
+}
+
+static void is_invalid(void){
+  if(lock_held_by_current_thread(&filesys_lock))
+    lock_release(&filesys_lock);
+  sys_exit(-1);
+}
