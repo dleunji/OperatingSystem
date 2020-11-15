@@ -21,7 +21,7 @@
 
 static thread_func start_process NO_RETURN;
 static bool load (const char *cmdline, void (**eip) (void), void **esp);
-void parse_cmd(const char *file_name, char **argv, int *argc);
+void parse_cmd(char *file_name, char **argv, int *argc);
 
 /* Starts a new thread running a user program loaded from
    FILENAME.  The new thread may be scheduled (and may even exit)
@@ -91,8 +91,10 @@ failed:
     palloc_free_page(cmd_copy);
   if(fn_copy)
     palloc_free_page(fn_copy);
-  if(pcb)
+  if(pcb){
+    palloc_free_page(pcb->cmdline);
     palloc_free_page(pcb);
+  }
 
   return PID_ERROR;
 }
@@ -160,7 +162,6 @@ start_process (void *pcb_)
    child of the calling process, or if process_wait() has already
    been successfully called for the given TID, returns -1
    immediately, without waiting.
-
    This function will be implemented in problem 2-2.  For now, it
    does nothing. */
 int
@@ -234,6 +235,7 @@ process_exit (void)
     e = list_pop_front(pcb_list);
     pcb = list_entry(e, struct process_control_block,elem);
     if(pcb->exited == true){
+      palloc_free_page(pcb->cmdline);
       palloc_free_page(pcb); //already signed
     }
     else{
@@ -249,6 +251,7 @@ process_exit (void)
   sema_up(&cur->pcb->sema_wait);
 
   if(cur_orphan){
+    palloc_free_page(&cur->pcb->cmdline);
     palloc_free_page(&cur->pcb);
   }
 
@@ -478,6 +481,7 @@ load (const char *file_name, void (**eip) (void), void **esp)
 
  done:
   /* We arrive here whether the load is successful or not. */
+  palloc_free_page(argv);
   file_close (file);
   return success;
 }
@@ -534,15 +538,11 @@ validate_segment (const struct Elf32_Phdr *phdr, struct file *file)
 /* Loads a segment starting at offset OFS in FILE at address
    UPAGE.  In total, READ_BYTES + ZERO_BYTES bytes of virtual
    memory are initialized, as follows:
-
         - READ_BYTES bytes at UPAGE must be read from FILE
           starting at offset OFS.
-
         - ZERO_BYTES bytes at UPAGE + READ_BYTES must be zeroed.
-
    The pages initialized by this function must be writable by the
    user process if WRITABLE is true, read-only otherwise.
-
    Return true if successful, false if a memory allocation error
    or disk read error occurs. */
 static bool
@@ -628,11 +628,13 @@ install_page (void *upage, void *kpage, bool writable)
   return (pagedir_get_page (t->pagedir, upage) == NULL
           && pagedir_set_page (t->pagedir, upage, kpage, writable));
 }
-void parse_cmd(const char *file_name, char **argv, int *argc){ //parse the string and save the command to the cmd
+void parse_cmd(char *file_name, char **argv, int *argc){ //parse the string and save the command to the cmd
   char *fn_copy = (char*)palloc_get_page(0);//save cmd after parsing
   char *save_ptr, *token;
   int cnt = 0;
-
+  if(fn_copy == NULL){
+    return;
+  }
   strlcpy(fn_copy,file_name,PGSIZE);
 
   for(token = strtok_r(fn_copy, " ",&save_ptr);token;token = strtok_r(NULL," ",&save_ptr)){
@@ -656,7 +658,6 @@ void parse_cmd(const char *file_name, char **argv, int *argc){ //parse the strin
   if(fn_copy == NULL)
     goto done;
   strlcpy(fn_copy,file_name,PGSIZE);
-
   for(token = strtok_r(file_name," ",&save_ptr);token!=NULL;
   token = strtok_r(NULL," ",&save_ptr)){
     argv[argc++] = token;

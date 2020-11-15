@@ -41,7 +41,7 @@ int process_wait (tid_t);
 void process_exit (void);
 void process_activate (void);
 //////////////////////////////////////
-void parse_cmd(const char *file_name, char **argv, int *argc); //parse the string and save the command to the cmd
+void parse_cmd(char *file_name, char **argv, int *argc); //parse the string and save the command to the cmd
 void construct_stack(char **argv,int *argc, void ** esp);
 struct process_control_block *process_find_child(pid_t pid);
 #endif /* userprog/process.h */
