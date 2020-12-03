@@ -19,3 +19,23 @@ Extension host agent listening on 40701
 bash: cannot set terminal process group (-1): Inappropriate ioctl for device
 bash: no job control in this shell
 [01:49:51] [127.0.0.1][5d2aa2e4][ExtensionHostConnection] <511645> Launched Extension Host Process.
+Error: write EPIPE
+    at WriteWrap.onWriteComplete [as oncomplete] (internal/stream_base_commons.js:83:16) {
+  errno: 'EPIPE',
+  code: 'EPIPE',
+  syscall: 'write'
+}
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
+    at process.emit (events.js:200:13)
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
+    at process.emit (events.js:200:13)
+[03:37:51] [127.0.0.1][2a23bae3][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[04:02:00] [127.0.0.1][2a23bae3][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[04:02:00] [127.0.0.1][5b218af2][ManagementConnection] New connection established.
+[04:02:00] [127.0.0.1][dc21f64f][ExtensionHostConnection] New connection established.
+[04:02:00] [127.0.0.1][dc21f64f][ExtensionHostConnection] <525089> Launched Extension Host Process.
+[04:02:01] [File Watcher (chokidar)] Inotify limit reached (ENOSPC)
+[04:07:00] [127.0.0.1][2a23bae3][ManagementConnection] The reconnection short grace time of 5m has expired, so the connection will be disposed.
+[04:07:01] [127.0.0.1][5d2aa2e4][ExtensionHostConnection] <511645> Extension Host Process exited with code: 0, signal: null.

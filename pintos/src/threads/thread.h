@@ -4,6 +4,12 @@
 #include <debug.h>
 #include <list.h>
 #include <stdint.h>
+#include <threads/synch.h> /* Project #3 */
+
+#ifdef USERPROG
+/* Project #3 */
+extern bool thread_prior_aging = false;
+#endif
 
 /* States in a thread's life cycle. */
 enum thread_status
@@ -88,6 +94,7 @@ struct thread
     char name[16];                      /* Name (for debugging purposes). */
     uint8_t *stack;                     /* Saved stack pointer. */
     int priority;                       /* Priority. */
+    int original_priority;
     struct list_elem allelem;           /* List element for all threads list. */
     struct list_elem waitelem;          /* List element stored in the wait queue */
     int64_t sleep_endtick;
@@ -149,9 +156,10 @@ void thread_set_nice (int);
 int thread_get_recent_cpu (void);
 int thread_get_load_avg (void);
 
-/* Add */
+/* Project 3 */
 void thread_tick (int64_t tick);
 void thread_sleep(int64_t tick);
 void thread_awake(int64_t current_tick);
+bool compare_priority(const struct list_elem *e1, const struct list_elem *e2, void *aux);
 
 #endif /* threads/thread.h */
