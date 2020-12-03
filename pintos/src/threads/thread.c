@@ -28,6 +28,10 @@ static struct list ready_list;
    when they are first scheduled and removed when they exit. */
 static struct list all_list;
 
+/*(new) List of processes in sleeping state.
+To prevent busy waiting, make a wait queue*/
+static struct list wait_list;
+
 /* Idle thread. */
 static struct thread *idle_thread;
 
@@ -91,6 +95,7 @@ thread_init (void)
 
   lock_init (&tid_lock);
   list_init (&ready_list);
+  list_init (&wait_list);
   list_init (&all_list);
 
   /* Set up a thread structure for the running thread. */
@@ -120,7 +125,7 @@ thread_start (void)
 /* Called by the timer interrupt handler at each timer tick.
    Thus, this function runs in an external interrupt context. */
 void
-thread_tick (void) 
+thread_tick (int64_t tick) 
 {
   struct thread *t = thread_current ();
 
@@ -134,10 +139,34 @@ thread_tick (void)
   else
     kernel_ticks++;
 
+  /* Wake any thread that waiting time ends */
+  thread_awake(tick);
+
   /* Enforce preemption. */
   if (++thread_ticks >= TIME_SLICE)
     intr_yield_on_return ();
 }
+
+/* IMPORTANT 
+Wake up all sleeping threads whose ticks has been expired.
+Remove them from the wait queue and push them into the ready queue */
+void thread_awake(int64_t current_tick){
+  struct list_elem *e;
+
+  ASSERT(intr_get_level() == INTR_OFF);
+
+  //iterate
+  for(e = list_begin(&wait_list);e != list_end(&wait_list);e = list_next(e)){
+    struct thread *t = list_entry(e,struct thread,waitelem);
+    if(t->sleep_endtick <= current_tick){//expire
+      t -> sleep_endtick = 0;
+      list_remove(&t->waitelem);
+      //add it to the ready_queue
+      thread_unblock(t);
+    }
+  }
+
+} 
 
 /* Prints thread statistics. */
 void
@@ -471,6 +500,8 @@ init_thread (struct thread *t, const char *name, int priority)
   t->stack = (uint8_t *) t + PGSIZE;
   t->priority = priority;
   t->magic = THREAD_MAGIC;
+  t->waiting_lock = NULL;
+  t->sleep_endtick = 0;
   t->waiting_lock = NULL;//new
   list_init(&t->locks); //new
 
@@ -602,3 +633,17 @@ allocate_tid (void)
 /* Offset of `stack' member within `struct thread'.
    Used by switch.S, which can't figure it out on its own. */
 uint32_t thread_stack_ofs = offsetof (struct thread, stack);
+
+
+/* Make the current thread to sleep during the 'tick' 
+   It calls thread_block(), making T sleep.*/
+void thread_sleep(int64_t tick){
+  struct thread *t = thread_current();
+  t->sleep_endtick = tick;
+
+  //queue
+  list_push_back(&wait_list,&t->waitelem);
+
+  thread_block();
+
+}

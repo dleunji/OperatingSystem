@@ -89,7 +89,8 @@ struct thread
     uint8_t *stack;                     /* Saved stack pointer. */
     int priority;                       /* Priority. */
     struct list_elem allelem;           /* List element for all threads list. */
-    struct list_elem waitelem;
+    struct list_elem waitelem;          /* List element stored in the wait queue */
+    int64_t sleep_endtick;
 
     /* Shared between thread.c and synch.c. */
     struct list_elem elem;              /* List element. */
@@ -121,7 +122,6 @@ extern bool thread_mlfqs;
 void thread_init (void);
 void thread_start (void);
 
-void thread_tick (void);
 void thread_print_stats (void);
 
 typedef void thread_func (void *aux);
@@ -148,5 +148,10 @@ int thread_get_nice (void);
 void thread_set_nice (int);
 int thread_get_recent_cpu (void);
 int thread_get_load_avg (void);
+
+/* Add */
+void thread_tick (int64_t tick);
+void thread_sleep(int64_t tick);
+void thread_awake(int64_t current_tick);
 
 #endif /* threads/thread.h */

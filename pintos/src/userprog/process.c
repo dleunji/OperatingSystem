@@ -229,6 +229,16 @@ process_exit (void)
   struct process_control_block *pcb;
   struct list_elem *e;
 
+  /* Erase FD*/
+  struct list *fdlist = &cur -> file_descriptors;
+  while(!list_empty(fdlist)){
+    struct list_elem *e = list_pop_front(fdlist);
+    struct file_desc *desc = list_entry(e,struct file_desc,elem);
+    file_close(desc->file);
+    palloc_free_page(desc);
+  }
+
+
   /* Erase PCB */
   struct list *pcb_list  = &cur -> child_list;
   while(!list_empty(pcb_list)){

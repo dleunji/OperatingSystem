@@ -33,7 +33,6 @@ struct file_desc {
     int id;
     struct list_elem elem;
     struct file* file;
-    struct dir* dir;    //When directory is opening, dir!=NULL 
 };
 
 pid_t process_execute (const char *file_name);

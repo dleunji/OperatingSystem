@@ -10,25 +10,12 @@
 
 IP Address: 163.239.27.233
 IP Address: 172.30.10.10
-Extension host agent listening on 43131
+Extension host agent listening on 40701
 
 
-[14:09:00] Extension host agent started.
-[14:09:01] [127.0.0.1][5430caf4][ManagementConnection] Unknown reconnection token.
-Error: write EPIPE
-    at WriteWrap.onWriteComplete [as oncomplete] (internal/stream_base_commons.js:83:16) {
-  errno: 'EPIPE',
-  code: 'EPIPE',
-  syscall: 'write'
-}
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
-    at process.emit (events.js:200:13)
-[14:20:19] [127.0.0.1][6565cecf][ManagementConnection] New connection established.
-[14:20:19] [127.0.0.1][fa43fe7c][ExtensionHostConnection] New connection established.
+[01:49:51] Extension host agent started.
+[01:49:51] [127.0.0.1][2a23bae3][ManagementConnection] New connection established.
+[01:49:51] [127.0.0.1][5d2aa2e4][ExtensionHostConnection] New connection established.
 bash: cannot set terminal process group (-1): Inappropriate ioctl for device
 bash: no job control in this shell
-[14:20:19] [127.0.0.1][fa43fe7c][ExtensionHostConnection] <3130306> Launched Extension Host Process.
+[01:49:51] [127.0.0.1][5d2aa2e4][ExtensionHostConnection] <511645> Launched Extension Host Process.

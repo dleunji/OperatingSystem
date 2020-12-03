@@ -1,0 +1,6 @@
+Kernel panic in run: PANIC at ../../threads/palloc.c:140 in palloc_free_multiple(): assertion `bitmap_all (pool->used_map, page_idx, page_cnt)' failed.
+Call stack: 0xc0029c86 0x665f636f
+Translation of call stack:
+In kernel.o:
+0xc0029c86: debug_panic (.../../lib/kernel/debug.c:38)
+0x665f636f: (unknown)

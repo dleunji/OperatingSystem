@@ -78,10 +78,8 @@ syscall_handler (struct intr_frame *f)
     {
       const char *file_name;
       unsigned initial_size;
-      //printf("I'm here-1\n");
       read_user(f->esp + 4,&file_name,sizeof(file_name));
       read_user(f->esp + 8,&initial_size,sizeof(initial_size));
-      //printf("I'm here0\n");
       bool return_code = sys_create(file_name,initial_size);
       f->eax = return_code;
       break;
@@ -242,12 +240,9 @@ bool sys_create(const char *file_name, unsigned initial_size){
   if(file_name == NULL)
     sys_exit(-1);
   check_user((const uint8_t*)file_name);
-  //printf("I'm here1\n");
   lock_acquire(&filesys_lock);
-  //printf("I'm here2\n");
   bool success = filesys_create(file_name,initial_size);
   lock_release(&filesys_lock);
-  //printf("I'm here3\n");
   return success;
 }
 
@@ -270,19 +265,14 @@ int sys_open(const char *file_name){
     
   check_user((const uint8_t*)file_name);
   fd = palloc_get_page(0);
-  //printf("here0\n");
   if(!fd) 
     return -1;
-  //printf("here1\n");
 
   lock_acquire(&filesys_lock);
-  //printf("%s\n",file_name);
   file = filesys_open(file_name);
-  //printf("here2\n");
   if(file == NULL){
     palloc_free_page(fd);
     lock_release(&filesys_lock);
-    //printf("here3\n");
     return -1;
   }
   if(strcmp(thread_name(),file_name) == 0){
@@ -291,7 +281,6 @@ int sys_open(const char *file_name){
 
   //save the file to the file descriptor
   fd->file = file;
-  //printf("here4\n");
   //no directory
   //fd_list
   struct list* fd_list = &thread_current()->file_descriptors;
