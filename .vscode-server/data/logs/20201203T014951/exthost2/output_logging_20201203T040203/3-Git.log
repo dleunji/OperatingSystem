@@ -347,3 +347,746 @@ Open repository: /sogang/under/cse20170101
 > git show --textconv :pintos/src/tests/threads/Make.tests
 > git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/Make.tests
 > git cat-file -s 456903538990dedcdc15bfef32dc6e0112033ef1
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/Make.tests
+> git cat-file -s 29e91880124239f739b2a0c038b533951ac511e4
+> git show --textconv :pintos/src/tests/threads/Make.tests
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/Make.tests
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git cat-file -s 29e91880124239f739b2a0c038b533951ac511e4
+> git config --get commit.template
+> git show --textconv :pintos/src/tests/threads/Make.tests
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/Make.tests
+> git cat-file -s 29e91880124239f739b2a0c038b533951ac511e4
+> git show --textconv :pintos/src/tests/threads/Make.tests
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/synch.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.h
+> git cat-file -s b0ce1bdc6078655f14695d55c9bb81349caa31bf
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/tests/threads/priority-aging.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-aging.c
+> git cat-file -s e429d383c6c31b1e16d13c5cfc93227cb0c3ac6d
+> git show --textconv :pintos/src/tests/threads/priority-aging.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-aging.ck
+> git cat-file -s a1d02a404b7bf1606c66735d01cb949b2ffb3ade
+> git show --textconv :pintos/src/tests/threads/priority-aging.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-aging.c
+> git cat-file -s e429d383c6c31b1e16d13c5cfc93227cb0c3ac6d
+> git show --textconv :pintos/src/tests/threads/priority-aging.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-aging.ck
+> git cat-file -s a1d02a404b7bf1606c66735d01cb949b2ffb3ade
+> git show --textconv :pintos/src/tests/threads/priority-aging.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-aging.c
+> git cat-file -s e429d383c6c31b1e16d13c5cfc93227cb0c3ac6d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/tests/threads/priority-aging.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-aging.c
+> git cat-file -s e429d383c6c31b1e16d13c5cfc93227cb0c3ac6d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/tests/threads/priority-change.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.ck
+> git cat-file -s f4d9b2f34f1fdc6a3910f83b43f33ca826f1ae20
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/tests/threads/priority-change.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.ck
+> git cat-file -s f4d9b2f34f1fdc6a3910f83b43f33ca826f1ae20
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/tests/threads/priority-change.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.ck
+> git cat-file -s f4d9b2f34f1fdc6a3910f83b43f33ca826f1ae20
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/tests/threads/priority-change.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.ck
+> git cat-file -s f4d9b2f34f1fdc6a3910f83b43f33ca826f1ae20
+> git show --textconv :pintos/src/tests/threads/priority-change.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.c
+> git cat-file -s 810b05a1d76973ebdf28f914d03c91318c021e85
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/tests/threads/priority-change.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.c
+> git cat-file -s 810b05a1d76973ebdf28f914d03c91318c021e85
+> git show --textconv :pintos/src/tests/threads/priority-aging.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-aging.ck
+> git cat-file -s a1d02a404b7bf1606c66735d01cb949b2ffb3ade
+> git show --textconv :pintos/src/tests/threads/priority-change.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.ck
+> git cat-file -s f4d9b2f34f1fdc6a3910f83b43f33ca826f1ae20
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/tests/threads/priority-change.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.ck
+> git cat-file -s f4d9b2f34f1fdc6a3910f83b43f33ca826f1ae20
+> git show --textconv :pintos/src/tests/threads/priority-change.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.c
+> git cat-file -s 810b05a1d76973ebdf28f914d03c91318c021e85
+> git show --textconv :pintos/src/tests/threads/priority-change.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.ck
+> git cat-file -s f4d9b2f34f1fdc6a3910f83b43f33ca826f1ae20
+> git show --textconv :pintos/src/tests/threads/priority-change.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.c
+> git cat-file -s 810b05a1d76973ebdf28f914d03c91318c021e85
+> git show --textconv :pintos/src/tests/threads/priority-change.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.ck
+> git cat-file -s f4d9b2f34f1fdc6a3910f83b43f33ca826f1ae20
+> git show --textconv :pintos/src/tests/threads/priority-change.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.c
+> git cat-file -s 810b05a1d76973ebdf28f914d03c91318c021e85
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/tests/threads/priority-change.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.c
+> git cat-file -s 810b05a1d76973ebdf28f914d03c91318c021e85
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/tests/threads/priority-change.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.c
+> git cat-file -s 810b05a1d76973ebdf28f914d03c91318c021e85
+> git show --textconv :pintos/src/tests/threads/priority-change.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.ck
+> git cat-file -s f4d9b2f34f1fdc6a3910f83b43f33ca826f1ae20
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 0ddb519bd39e91ac29df6d288586cd04235162b6
+> git show --textconv :pintos/src/tests/threads/priority-change.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.ck
+> git cat-file -s f4d9b2f34f1fdc6a3910f83b43f33ca826f1ae20
+> git show --textconv :pintos/src/tests/threads/priority-aging.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-aging.c
+> git cat-file -s e429d383c6c31b1e16d13c5cfc93227cb0c3ac6d
+> git show --textconv :pintos/src/tests/threads/priority-aging.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-aging.ck
+> git cat-file -s a1d02a404b7bf1606c66735d01cb949b2ffb3ade
+> git show --textconv :pintos/src/tests/threads/priority-aging.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-aging.c
+> git cat-file -s e429d383c6c31b1e16d13c5cfc93227cb0c3ac6d
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/tests/threads/priority-aging.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-aging.c
+> git cat-file -s e429d383c6c31b1e16d13c5cfc93227cb0c3ac6d
+> git show --textconv :pintos/src/tests/threads/priority-aging.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-aging.ck
+> git cat-file -s a1d02a404b7bf1606c66735d01cb949b2ffb3ade
+> git show --textconv :pintos/src/tests/threads/priority-change.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.c
+> git cat-file -s 810b05a1d76973ebdf28f914d03c91318c021e85
+> git show --textconv :pintos/src/tests/threads/priority-change.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.ck
+> git cat-file -s f4d9b2f34f1fdc6a3910f83b43f33ca826f1ae20
+> git show --textconv :pintos/src/tests/threads/priority-change.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.c
+> git cat-file -s 810b05a1d76973ebdf28f914d03c91318c021e85
+> git show --textconv :pintos/src/tests/threads/priority-change.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.ck
+> git cat-file -s f4d9b2f34f1fdc6a3910f83b43f33ca826f1ae20
+> git show --textconv :pintos/src/tests/threads/priority-change.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.c
+> git cat-file -s 810b05a1d76973ebdf28f914d03c91318c021e85
+> git show --textconv :pintos/src/tests/threads/priority-change.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.ck
+> git cat-file -s f4d9b2f34f1fdc6a3910f83b43f33ca826f1ae20
+> git show --textconv :pintos/src/tests/threads/priority-change.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.c
+> git cat-file -s 810b05a1d76973ebdf28f914d03c91318c021e85
+> git show --textconv :pintos/src/tests/threads/priority-aging.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-aging.ck
+> git cat-file -s a1d02a404b7bf1606c66735d01cb949b2ffb3ade
+> git show --textconv :pintos/src/tests/threads/priority-change.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.c
+> git cat-file -s 810b05a1d76973ebdf28f914d03c91318c021e85
+> git show --textconv :pintos/src/tests/threads/priority-change.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.ck
+> git cat-file -s f4d9b2f34f1fdc6a3910f83b43f33ca826f1ae20
+> git show --textconv :pintos/src/tests/threads/priority-change.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.c
+> git cat-file -s 810b05a1d76973ebdf28f914d03c91318c021e85
+> git show --textconv :pintos/src/tests/threads/priority-change.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.ck
+> git cat-file -s f4d9b2f34f1fdc6a3910f83b43f33ca826f1ae20
+> git show --textconv :pintos/src/tests/threads/priority-change.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.c
+> git cat-file -s 810b05a1d76973ebdf28f914d03c91318c021e85
+> git show --textconv :pintos/src/tests/threads/priority-change.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.ck
+> git cat-file -s f4d9b2f34f1fdc6a3910f83b43f33ca826f1ae20
+> git show --textconv :pintos/src/tests/threads/priority-change.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.c
+> git cat-file -s 810b05a1d76973ebdf28f914d03c91318c021e85
+> git show --textconv :pintos/src/tests/threads/priority-change.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.ck
+> git cat-file -s f4d9b2f34f1fdc6a3910f83b43f33ca826f1ae20
+> git show --textconv :pintos/src/tests/threads/priority-change.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-change.c
+> git cat-file -s 810b05a1d76973ebdf28f914d03c91318c021e85
+> git show --textconv :pintos/src/tests/threads/priority-aging.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-aging.ck
+> git cat-file -s a1d02a404b7bf1606c66735d01cb949b2ffb3ade
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 68b71ed8882a2e1db5c7b6af6e7eaa44d570736d
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1
+> git show --textconv :pintos/src/threads/synch.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/synch.c
+> git cat-file -s e639c12c2b6d15a8460fb004fa906bfd76aa2c76
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 35cfb1fc984dc9d12c1d13def61bdcfb9821e5f1

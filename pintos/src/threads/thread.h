@@ -6,11 +6,6 @@
 #include <stdint.h>
 #include <threads/synch.h> /* Project #3 */
 
-#ifdef USERPROG
-/* Project #3 */
-extern bool thread_prior_aging = false;
-#endif
-
 /* States in a thread's life cycle. */
 enum thread_status
   {
@@ -29,6 +24,7 @@ typedef int tid_t;
 #define PRI_MIN 0                       /* Lowest priority. */
 #define PRI_DEFAULT 31                  /* Default priority. */
 #define PRI_MAX 63                      /* Highest priority. */
+#define FRACTION 1 << 14
 
 /* A kernel thread or user process.
 
@@ -99,6 +95,10 @@ struct thread
     struct list_elem waitelem;          /* List element stored in the wait queue */
     int64_t sleep_endtick;
 
+    /* Aging */
+    int nice;
+    int recent_cpu;
+
     /* Shared between thread.c and synch.c. */
     struct list_elem elem;              /* List element. */
     struct list locks;
@@ -120,6 +120,10 @@ struct thread
     /* Owned by thread.c. */
     unsigned magic;                     /* Detects stack overflow. */
   };
+
+/* Project #3 */
+bool thread_prior_aging;
+
 
 /* If false (default), use round-robin scheduler.
    If true, use multi-level feedback queue scheduler.
@@ -155,11 +159,18 @@ int thread_get_nice (void);
 void thread_set_nice (int);
 int thread_get_recent_cpu (void);
 int thread_get_load_avg (void);
+void inc_recent_cpu(void);
+void update_load_avg(void);
+void update_recent_cpu(void);
+
 
 /* Project 3 */
 void thread_tick (int64_t tick);
 void thread_sleep(int64_t tick);
 void thread_awake(int64_t current_tick);
-bool compare_priority(const struct list_elem *e1, const struct list_elem *e2, void *aux);
+bool compare_priority(const struct list_elem *e1, const struct list_elem *e2, void *aux);\
+void thread_aging(void);
+int nearest_int(int num);
+int max_priority(void);
 
 #endif /* threads/thread.h */
