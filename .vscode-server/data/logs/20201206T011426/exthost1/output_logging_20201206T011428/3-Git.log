@@ -11,160 +11,9 @@ Open repository: /sogang/under/cse20170101
 > git for-each-ref --sort -committerdate --format %(refname) %(objectname)
 > git remote --verbose
 > git config --get commit.template
-> git check-ignore -v -z --stdin
-> git check-ignore -v -z --stdin
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git rev-parse master
-> git rev-parse --symbolic-full-name master@{u}
-> git rev-list --left-right master...refs/remotes/origin/master
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
-> git remote --verbose
-> git config --get commit.template
-> git check-ignore -v -z --stdin
-> git check-ignore -v -z --stdin
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git rev-parse master
-> git rev-parse --symbolic-full-name master@{u}
-> git rev-list --left-right master...refs/remotes/origin/master
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
-> git remote --verbose
-> git config --get commit.template
-> git show --textconv :pintos/src/filesys/filesys.c
-> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/filesys/filesys.c
-> git cat-file -s 7a53f5ffd924ca7b1b384fd9b46b3256e14f30e6
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git rev-parse master
-> git rev-parse --symbolic-full-name master@{u}
-> git rev-list --left-right master...refs/remotes/origin/master
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
-> git remote --verbose
-> git config --get commit.template
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git rev-parse master
-> git rev-parse --symbolic-full-name master@{u}
-> git rev-list --left-right master...refs/remotes/origin/master
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
-> git remote --verbose
-> git config --get commit.template
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git rev-parse master
-> git rev-parse --symbolic-full-name master@{u}
-> git rev-list --left-right master...refs/remotes/origin/master
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
-> git remote --verbose
-> git config --get commit.template
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git rev-parse master
-> git rev-parse --symbolic-full-name master@{u}
-> git rev-list --left-right master...refs/remotes/origin/master
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
-> git remote --verbose
-> git config --get commit.template
-> git show --textconv :pintos/src/filesys/directory.c
-> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/filesys/directory.c
-> git cat-file -s 030c1c9b0dbaf9b3a41a4decaadd7c76793b1d63
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git rev-parse master
-> git rev-parse --symbolic-full-name master@{u}
-> git rev-list --left-right master...refs/remotes/origin/master
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
-> git remote --verbose
-> git config --get commit.template
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git rev-parse master
-> git rev-parse --symbolic-full-name master@{u}
-> git rev-list --left-right master...refs/remotes/origin/master
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
-> git remote --verbose
-> git config --get commit.template
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git rev-parse master
-> git rev-parse --symbolic-full-name master@{u}
-> git rev-list --left-right master...refs/remotes/origin/master
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
-> git remote --verbose
-> git config --get commit.template
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git rev-parse master
-> git rev-parse --symbolic-full-name master@{u}
-> git rev-list --left-right master...refs/remotes/origin/master
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
-> git remote --verbose
-> git config --get commit.template
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git rev-parse master
-> git rev-parse --symbolic-full-name master@{u}
-> git rev-list --left-right master...refs/remotes/origin/master
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
-> git remote --verbose
-> git config --get commit.template
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git rev-parse master
-> git rev-parse --symbolic-full-name master@{u}
-> git rev-list --left-right master...refs/remotes/origin/master
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
-> git remote --verbose
-> git config --get commit.template
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git rev-parse master
-> git rev-parse --symbolic-full-name master@{u}
-> git rev-list --left-right master...refs/remotes/origin/master
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
-> git remote --verbose
-> git check-ignore -v -z --stdin
-> git config --get commit.template
-> git check-ignore -v -z --stdin
-> git check-ignore -v -z --stdin
-> git check-ignore -v -z --stdin
 > git show --textconv :pintos/src/threads/thread.c
 > git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
-> git cat-file -s 6da99543dcd5973be63b570fc685bad6427d51e5
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git rev-parse master
-> git rev-parse --symbolic-full-name master@{u}
-> git rev-list --left-right master...refs/remotes/origin/master
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
-> git remote --verbose
-> git config --get commit.template
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git rev-parse master
-> git rev-parse --symbolic-full-name master@{u}
-> git rev-list --left-right master...refs/remotes/origin/master
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
-> git remote --verbose
-> git config --get commit.template
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git rev-parse master
-> git rev-parse --symbolic-full-name master@{u}
-> git rev-list --left-right master...refs/remotes/origin/master
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
-> git remote --verbose
-> git config --get commit.template
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git rev-parse master
-> git rev-parse --symbolic-full-name master@{u}
-> git rev-list --left-right master...refs/remotes/origin/master
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
-> git remote --verbose
-> git config --get commit.template
-> git check-ignore -v -z --stdin
+> git cat-file -s c2ca1cc4244cc7c0aefe0c4a910695d8d549df21
 > git check-ignore -v -z --stdin
 > git status -z -u
 > git symbolic-ref --short HEAD
@@ -174,12 +23,102 @@ Open repository: /sogang/under/cse20170101
 > git for-each-ref --sort -committerdate --format %(refname) %(objectname)
 > git remote --verbose
 > git config --get commit.template
-> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
 > git show --textconv :pintos/src/threads/thread.h
 > git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
-> git cat-file -s 59549a4e70296bb45a76d720165b18dc396813d9
+> git cat-file -s 2d66113ecc9faf7f13b061a559e8f9436fcb0efb
 > git status -z -u
 > git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git show --textconv :pintos/src/threads/init.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/init.c
+> git symbolic-ref --short HEAD
+> git cat-file -s ca774f30c76cf28217214acb0e1779e9f6343e57
 > git rev-parse master
 > git rev-parse --symbolic-full-name master@{u}
 > git rev-list --left-right master...refs/remotes/origin/master
@@ -195,20 +134,6 @@ Open repository: /sogang/under/cse20170101
 > git for-each-ref --sort -committerdate --format %(refname) %(objectname)
 > git remote --verbose
 > git config --get commit.template
-> git show --textconv :pintos/src/userprog/process.c
-> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/userprog/process.c
-> git cat-file -s b176ff4298dce4003dadc1d8d1cb29178ea9b813
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git rev-parse master
-> git rev-parse --symbolic-full-name master@{u}
-> git rev-list --left-right master...refs/remotes/origin/master
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
-> git remote --verbose
-> git config --get commit.template
-> git show --textconv :pintos/src/userprog/process.h
-> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/userprog/process.h
-> git cat-file -s d59be445a455cd769f37dc685625c985527d892a
 > git status -z -u
 > git symbolic-ref --short HEAD
 > git rev-parse master
@@ -289,20 +214,10 @@ Open repository: /sogang/under/cse20170101
 > git for-each-ref --sort -committerdate --format %(refname) %(objectname)
 > git remote --verbose
 > git config --get commit.template
-> git show --textconv :pintos/src/filesys/filesys.h
-> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/filesys/filesys.h
-> git cat-file -s 455ac7274a08e15abd0749efe3446842d48f8032
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git rev-parse master
-> git rev-parse --symbolic-full-name master@{u}
-> git rev-list --left-right master...refs/remotes/origin/master
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
-> git remote --verbose
-> git config --get commit.template
-> git show --textconv :pintos/src/filesys/filesys.c
-> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/filesys/filesys.c
-> git cat-file -s 7a53f5ffd924ca7b1b384fd9b46b3256e14f30e6
+> git show --textconv :pintos/src/threads/thread.h
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.h
+> git cat-file -s 2d66113ecc9faf7f13b061a559e8f9436fcb0efb
+> git check-ignore -v -z --stdin
 > git status -z -u
 > git symbolic-ref --short HEAD
 > git rev-parse master
@@ -335,9 +250,6 @@ Open repository: /sogang/under/cse20170101
 > git for-each-ref --sort -committerdate --format %(refname) %(objectname)
 > git remote --verbose
 > git config --get commit.template
-> git show --textconv :pintos/src/filesys/directory.c
-> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/filesys/directory.c
-> git cat-file -s 030c1c9b0dbaf9b3a41a4decaadd7c76793b1d63
 > git status -z -u
 > git symbolic-ref --short HEAD
 > git rev-parse master
@@ -354,3 +266,55 @@ Open repository: /sogang/under/cse20170101
 > git for-each-ref --sort -committerdate --format %(refname) %(objectname)
 > git remote --verbose
 > git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :pintos/src/threads/init.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/init.c
+> git cat-file -s ca774f30c76cf28217214acb0e1779e9f6343e57
+> git check-ignore -v -z --stdin

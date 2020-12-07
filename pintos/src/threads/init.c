@@ -252,9 +252,11 @@ parse_options (char **argv)
       else if (!strcmp (name, "-rs"))
         random_init (atoi (value));   
       else if (!strcmp (name, "-mlfqs"))
-        thread_mlfqs = true;     
+        thread_mlfqs = true;
+#ifndef USERPROG     
       else if (!strcmp (name, "-aging"))
-        thread_prior_aging = true;  
+        thread_prior_aging = true;
+#endif  
 #ifdef USERPROG
       else if (!strcmp (name, "-ul"))
         user_page_limit = atoi (value);

@@ -175,9 +175,9 @@ timer_interrupt (struct intr_frame *args UNUSED)
 {
   ticks++;
   //thread_tick (timer_ticks());
-  //if(thread_mlfqs || thread_prior_aging)
+  if(thread_mlfqs || thread_prior_aging)
   //increment recent_cpu of current running thread
-  inc_recent_cpu();
+    inc_recent_cpu();
   thread_awake(ticks);
   if(thread_prior_aging || thread_mlfqs){
     //recent_cpu is updated in every second

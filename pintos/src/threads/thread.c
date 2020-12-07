@@ -42,7 +42,7 @@ static struct thread *initial_thread;
 static struct lock tid_lock;
 
 /* load average variable */
-int load_avg;
+static int load_avg;
 
 /* Stack frame for kernel_thread(). */
 struct kernel_thread_frame 
@@ -61,6 +61,9 @@ static long long user_ticks;    /* # of timer ticks in user programs. */
 #define TIME_SLICE 4            /* # of timer ticks to give each thread. */
 static unsigned thread_ticks;   /* # of timer ticks since last yield. */
 
+#ifndef USERPROG
+bool thread_prior_aging;
+#endif
 /* If false (default), use round-robin scheduler.
    If true, use multi-level feedback queue scheduler.
    Controlled by kernel command-line option "-o mlfqs". */
@@ -98,8 +101,6 @@ thread_init (void)
   list_init (&wait_list);
   list_init (&all_list);
 
-  load_avg = 0;
-
   /* Set up a thread structure for the running thread. */
   initial_thread = running_thread ();
   init_thread (initial_thread, "main", PRI_DEFAULT);
@@ -119,7 +120,7 @@ thread_start (void)
   struct semaphore idle_started;
   sema_init (&idle_started, 0);
   thread_create ("idle", PRI_MIN, idle, &idle_started);
-
+  load_avg = 0;
   /* Start preemptive thread scheduling. */
   intr_enable ();
 
@@ -410,18 +411,24 @@ thread_get_priority (void)
 void
 thread_set_nice (int nice UNUSED) 
 {
+  intr_disable();
   struct thread *t = thread_current();
   t->nice = nice;
-  t->priority = ((PRI_MAX * FRACTION) - (t->recent_cpu / 4) - ((nice * FRACTION) * 2)) / FRACTION;
+  t->priority = (PRI_MAX - (t->recent_cpu / 4) - (nice * 2));
+  //t->priority = ((PRI_MAX * FRACTION) - (t->recent_cpu / 4) - ((nice * FRACTION) * 2)) / FRACTION;
   if(t->priority > PRI_MAX) t->priority = PRI_MAX;
   if(t->priority < PRI_MIN) t->priority = PRI_MIN;
+  intr_enable();
 }
 
 /* Returns the current thread's nice value. */
 int
 thread_get_nice (void) 
 {
-  return thread_current()->nice;
+  intr_disable();
+  int temp = thread_current()->nice;
+  intr_enable();
+  return temp;
 }
 
 /* Returns 100 times the system load average. */
@@ -445,9 +452,9 @@ thread_get_recent_cpu (void)
 }
 
 int nearest_int(int num){
-  if(num > 0)
-    return (num + FRACTION / 2) / FRACTION;
-  return (num - FRACTION / 2) / FRACTION;
+  if(num >= 0)
+    return (num + (FRACTION / 2)) / FRACTION;
+  return (num - (FRACTION / 2)) / FRACTION;
 }
 
 /* Idle thread.  Executes when no other thread is ready to run.
@@ -739,8 +746,13 @@ void update_recent_cpu(){
     t = list_entry(e, struct thread, allelem);
     if(t != idle_thread){
       //recent_cpu = (2 * load_avg) / (2 * load_avg + 1) * recent_cpu + nice
-      t->recent_cpu = ((int64_t)((int64_t)2 * load_avg * FRACTION / 2 * load_avg + (1 * FRACTION))) * t->recent_cpu / FRACTION
-       + (t->nice) * FRACTION;
+      /*
+      t->recent_cpu = ((int64_t)(((int64_t)2) * load_avg * FRACTION / (((int64_t) 2 * load_avg / FRACTION) + (1 * FRACTION)))) 
+      * t->recent_cpu / FRACTION + (t->nice) * FRACTION;
+      */
+      //t->recent_cpu = ((2 * load_avg) / (2 * load_avg + (1 * FRACTION))) * t->recent_cpu + t->nice * FRACTION;
+      t->recent_cpu = ((int64_t)((int64_t)2 * load_avg) * FRACTION / (2*load_avg + (1*FRACTION))) * t->recent_cpu
+        / FRACTION + (t->nice) * FRACTION;
     }
   }
 
