@@ -102,7 +102,7 @@ timer_sleep (int64_t ticks)
   intr_set_level(old_level);
 }
 
-/* Sleeps for approximately MS milliseconds.  Interrupts must be
+/* Sleeps for approximately MS mileconds.  Interrupts must be
    turned on. */
 void
 timer_msleep (int64_t ms) 

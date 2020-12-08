@@ -188,3 +188,97 @@ Open repository: /sogang/under/cse20170101
 > git show --textconv :pintos/src/threads/thread.c
 > git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
 > git cat-file -s c2ca1cc4244cc7c0aefe0c4a910695d8d549df21
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 2b2d8588a324df9fa0284927f8458b3777d72082
+> git show --textconv :pintos/src/threads/thread.c
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 2b2d8588a324df9fa0284927f8458b3777d72082
+> git config --get commit.template
+> git show --textconv :pintos/src/threads/thread.c
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 2b2d8588a324df9fa0284927f8458b3777d72082
+> git show --textconv :pintos/src/threads/thread.c
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :pintos/src/tests/threads/priority-aging.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/priority-aging.ck
+> git cat-file -s a1d02a404b7bf1606c66735d01cb949b2ffb3ade
+> git show --textconv :pintos/src/tests/threads/mlfqs-block.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/mlfqs-block.c
+> git cat-file -s 6d4992da31866946e9d39e427f613d376616dc14
+> git show --textconv :pintos/src/tests/threads/mlfqs-block.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/mlfqs-block.ck
+> git cat-file -s 8833a3affc0069b4c34fcd8a92f1bbdb76fae989
+> git show --textconv :pintos/src/tests/threads/mlfqs-block.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/mlfqs-block.c
+> git cat-file -s 6d4992da31866946e9d39e427f613d376616dc14
+> git show --textconv :pintos/src/tests/threads/mlfqs-block.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/mlfqs-block.ck
+> git cat-file -s 8833a3affc0069b4c34fcd8a92f1bbdb76fae989
+> git show --textconv :pintos/src/tests/threads/mlfqs-block.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/mlfqs-block.c
+> git cat-file -s 6d4992da31866946e9d39e427f613d376616dc14
+> git show --textconv :pintos/src/tests/threads/mlfqs-block.ck
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/mlfqs-block.ck
+> git cat-file -s 8833a3affc0069b4c34fcd8a92f1bbdb76fae989
+> git show --textconv :pintos/src/tests/threads/mlfqs-block.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/mlfqs-block.c
+> git cat-file -s 6d4992da31866946e9d39e427f613d376616dc14
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 2b2d8588a324df9fa0284927f8458b3777d72082
+> git show --textconv :pintos/src/tests/threads/mlfqs-block.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/mlfqs-block.c
+> git cat-file -s 6d4992da31866946e9d39e427f613d376616dc14
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 2b2d8588a324df9fa0284927f8458b3777d72082
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 2741c11bb4a2cfd5124ef35ad8784c2062418706
+> git show --textconv :pintos/src/tests/threads/mlfqs-block.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/tests/threads/mlfqs-block.c
+> git cat-file -s 6d4992da31866946e9d39e427f613d376616dc14
+> git show --textconv :pintos/src/threads/thread.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/threads/thread.c
+> git cat-file -s 2b2d8588a324df9fa0284927f8458b3777d72082
+> git show --textconv :pintos/src/devices/timer.c
+> git ls-files --stage -- /sogang/under/cse20170101/pintos/src/devices/timer.c
+> git cat-file -s 2741c11bb4a2cfd5124ef35ad8784c2062418706
