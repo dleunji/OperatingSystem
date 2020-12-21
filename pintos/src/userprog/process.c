@@ -1839,7 +1839,6 @@ process_exit (void)
     ASSERT( sys_munmap (desc->id) == true );
   }
 #endif
-
   // 2. clean up pcb object of all children processes
   struct list *child_list = &cur->child_list;
   while (!list_empty(child_list)) {
