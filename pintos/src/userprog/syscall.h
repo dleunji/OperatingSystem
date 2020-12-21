@@ -20,6 +20,9 @@ void sys_seek(int fd, unsigned position);
 unsigned sys_tell(int fd);
 void sys_close(int fd);
 
+#ifdef VM
+bool sys_munmap(mmapid_t);
+#endif
 
 
 #endif /* userprog/syscall.h */

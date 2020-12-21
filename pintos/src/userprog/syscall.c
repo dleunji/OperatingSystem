@@ -11,6 +11,7 @@
 #include "threads/thread.h"
 #include "threads/palloc.h"
 #include "threads/vaddr.h"
+#include "threads/malloc.h"
 
 struct lock filesys_lock;
 
@@ -21,6 +22,14 @@ static int read_user(void *src, void *dst, size_t bytes);
 static void syscall_handler (struct intr_frame *);
 static struct file_desc* find_file_desc(struct thread *t,int fd);
 static void is_invalid(void);
+
+#ifdef VM
+mmapid_t sys_mmap(int fd, void *);
+static struct mmap_desc* find_mmap_desc(struct thread *, mmapid_t fd);
+
+void preload_and_pin_pages(const void *, size_t);
+void unpin_preloaded_pages(const void *, size_t);
+#endif
 
 void
 syscall_init (void) 
@@ -174,6 +183,28 @@ syscall_handler (struct intr_frame *f)
       sys_close(fd);
       break;
     }
+#ifdef VM
+    case SYS_MMAP: // 13
+    {
+      int fd;
+      void *addr;
+      read_user(f->esp + 4, &fd, sizeof(fd));
+      read_user(f->esp + 8, &addr, sizeof(addr));
+
+      mmapid_t ret = sys_mmap (fd, addr);
+      f->eax = ret;
+      break;
+    }
+
+  case SYS_MUNMAP: // 14
+    {
+      mmapid_t mid;
+      read_user(f->esp + 4, &mid, sizeof(mid));
+
+      sys_munmap(mid);
+      break;
+    }
+#endif
   }
   
   //printf ("system call!\n");
@@ -212,16 +243,13 @@ pid_t sys_exec(const char *cmd_line){
   /*
   if(pid == PID_ERROR)
     return pid;
-
   //Obtain the new process
   struct process_control_block *child = process_find_child(pid);
   if(child == NULL)
     return PID_ERROR;
-
   //Wait until the new process is successfully loaded
   while(child->waiting)
     thread_yield();
-
   if(child->orphan)
     return PID_ERROR;
   */
@@ -327,7 +355,13 @@ int sys_read(int fd, void *buffer, unsigned size){
   else{
     struct file_desc* desc = find_file_desc(thread_current(),fd);
     if(fd && desc->file){
+#ifdef VM
+      preload_and_pin_pages(buffer, size);
+#endif
       ret = file_read(desc->file,buffer,size);
+#ifdef VM
+      unpin_preloaded_pages(buffer, size);
+#endif
     }
     else{
       ret = -1;
@@ -351,7 +385,13 @@ int sys_write(int fd, const void *buffer,unsigned size){
   else {
     struct file_desc *desc = find_file_desc(thread_current(),fd);
     if(desc && desc->file){
+#ifdef VM
+      preload_and_pin_pages(buffer, size);
+#endif
       ret = file_write(desc->file,buffer,size);
+#ifdef VM
+      unpin_preloaded_pages(buffer, size);
+#endif
     }
     else{
       ret = -1;
@@ -395,6 +435,104 @@ void sys_close(int fd){
   }
   lock_release(&filesys_lock);
 }
+
+#ifdef VM
+mmapid_t sys_mmap(int fd, void *upage) {
+  // check arguments
+  if (upage == NULL || pg_ofs(upage) != 0) return -1;
+  if (fd <= 1) return -1; // 0 and 1 are unmappable
+  struct thread *curr = thread_current();
+
+  lock_acquire (&filesys_lock);
+
+  /* 1. Open file */
+  struct file *f = NULL;
+  struct file_desc* file_d = find_file_desc(thread_current(), fd);
+  if(file_d && file_d->file) {
+    // reopen file so that it doesn't interfere with process itself
+    // it will be store in the mmap_desc struct (later closed on munmap)
+    f = file_reopen (file_d->file);
+  }
+  if(f == NULL) goto MMAP_FAIL;
+
+  size_t file_size = file_length(f);
+  if(file_size == 0) goto MMAP_FAIL;
+
+  /* 2. Mapping memory pages */
+  // First, ensure that all the page address is NON-EXIESENT.
+  size_t offset;
+  for (offset = 0; offset < file_size; offset += PGSIZE) {
+    void *addr = upage + offset;
+    if (vm_supt_has_entry(curr->supt, addr)) goto MMAP_FAIL;
+  }
+
+  // Now, map each page to filesystem
+  for (offset = 0; offset < file_size; offset += PGSIZE) {
+    void *addr = upage + offset;
+
+    size_t read_bytes = (offset + PGSIZE < file_size ? PGSIZE : file_size - offset);
+    size_t zero_bytes = PGSIZE - read_bytes;
+
+    vm_supt_install_filesys(curr->supt, addr,
+        f, offset, read_bytes, zero_bytes, /*writable*/true);
+  }
+
+  /* 3. Assign mmapid */
+  mmapid_t mid;
+  if (! list_empty(&curr->mmap_list)) {
+    mid = list_entry(list_back(&curr->mmap_list), struct mmap_desc, elem)->id + 1;
+  }
+  else mid = 1;
+
+  struct mmap_desc *mmap_d = (struct mmap_desc*) malloc(sizeof(struct mmap_desc));
+  mmap_d->id = mid;
+  mmap_d->file = f;
+  mmap_d->addr = upage;
+  mmap_d->size = file_size;
+  list_push_back (&curr->mmap_list, &mmap_d->elem);
+
+  // OK, release and return the mid
+  lock_release (&filesys_lock);
+  return mid;
+
+
+MMAP_FAIL:
+  // finally: release and return
+  lock_release (&filesys_lock);
+  return -1;
+}
+
+bool sys_munmap(mmapid_t mid)
+{
+  struct thread *curr = thread_current();
+  struct mmap_desc *mmap_d = find_mmap_desc(curr, mid);
+
+  if(mmap_d == NULL) { // not found such mid
+    return false; // or fail_invalid_access() ?
+  }
+
+  lock_acquire (&filesys_lock);
+  {
+    // Iterate through each page
+    size_t offset, file_size = mmap_d->size;
+    for(offset = 0; offset < file_size; offset += PGSIZE) {
+      void *addr = mmap_d->addr + offset;
+      size_t bytes = (offset + PGSIZE < file_size ? PGSIZE : file_size - offset);
+      vm_supt_mm_unmap (curr->supt, curr->pagedir, addr, mmap_d->file, offset, bytes);
+    }
+
+    // Free resources, and remove from the list
+    list_remove(& mmap_d->elem);
+    file_close(mmap_d->file);
+    free(mmap_d);
+  }
+  lock_release (&filesys_lock);
+
+  return true;
+}
+
+
+#endif
 
 ///////////////////////////////////////
 /////////////Memory Access/////////////
@@ -465,3 +603,52 @@ static void is_invalid(void){
     lock_release(&filesys_lock);
   sys_exit(-1);
 }
+
+#ifdef VM
+static struct mmap_desc*
+find_mmap_desc(struct thread *t, mmapid_t mid)
+{
+  ASSERT (t != NULL);
+
+  struct list_elem *e;
+
+  if (! list_empty(&t->mmap_list)) {
+    for(e = list_begin(&t->mmap_list);
+        e != list_end(&t->mmap_list); e = list_next(e))
+    {
+      struct mmap_desc *desc = list_entry(e, struct mmap_desc, elem);
+      if(desc->id == mid) {
+        return desc;
+      }
+    }
+  }
+
+  return NULL; // not found
+}
+
+
+void preload_and_pin_pages(const void *buffer, size_t size)
+{
+  struct supplemental_page_table *supt = thread_current()->supt;
+  uint32_t *pagedir = thread_current()->pagedir;
+
+  void *upage;
+  for(upage = pg_round_down(buffer); upage < buffer + size; upage += PGSIZE)
+  {
+    vm_load_page (supt, pagedir, upage);
+    vm_pin_page (supt, upage);
+  }
+}
+
+void unpin_preloaded_pages(const void *buffer, size_t size)
+{
+  struct supplemental_page_table *supt = thread_current()->supt;
+
+  void *upage;
+  for(upage = pg_round_down(buffer); upage < buffer + size; upage += PGSIZE)
+  {
+    vm_unpin_page (supt, upage);
+  }
+}
+
+#endif

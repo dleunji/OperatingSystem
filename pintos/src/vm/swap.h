@@ -1,21 +1,32 @@
 #ifndef VM_SWAP_H
 #define VM_SWAP_H
+
 typedef uint32_t swap_index_t;
 
-/* Functions for swap table. */
 
-/* Initialize the swap table. */
-void vm_swap_init(void);
+/* Functions for Swap Table manipulation. */
 
-/* swap out : write the content of page into the swap disk
-and return the index of swap region. */
-swap_index_t vm_swap_out(void *page);
+/**
+ * Initialize the swap. Must be called ONLY ONCE at the initializtion phase.
+ */
+void vm_swap_init (void);
 
-/* swap in : read the content through the index from the mapped block
-and store into page. */
-void vm_swap_in(swap_index_t swap_index, void *page);
+/**
+ * Swap Out: write the content of `page` into the swap disk,
+ * and return the index of swap region in which it is placed.
+ */
+swap_index_t vm_swap_out (void *page);
 
-/* Free the swap region. */
-void vm_swap_free(swap_index_t swap_index);
-#endif
+/**
+ * Swap In: read the content of from the specified swap index,
+ * from the mapped swap block, and store PGSIZE bytes into `page`.
+ */
+void vm_swap_in (swap_index_t swap_index, void *page);
 
+/**
+ * Free Swap: drop the swap region.
+ */
+void vm_swap_free (swap_index_t swap_index);
+
+
+#endif /* vm/swap.h */

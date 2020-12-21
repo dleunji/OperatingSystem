@@ -35,12 +35,27 @@ struct file_desc {
     struct file* file;
 };
 
+#ifdef VM
+typedef int mmapid_t;
+
+struct mmap_desc {
+  mmapid_t id;
+  struct list_elem elem;
+  struct file* file;
+
+  void *addr;   // where it is mapped to? store the user virtual address
+  size_t size;  // file size
+};
+#endif
+
 pid_t process_execute (const char *file_name);
 int process_wait (tid_t);
 void process_exit (void);
 void process_activate (void);
-//////////////////////////////////////
+/* Project 3 */
 void parse_cmd(char *file_name, char **argv, int *argc); //parse the string and save the command to the cmd
 void construct_stack(char **argv,int *argc, void ** esp);
 struct process_control_block *process_find_child(pid_t pid);
+
+/* Project 4 */
 #endif /* userprog/process.h */
