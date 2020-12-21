@@ -174,8 +174,6 @@ syscall_handler (struct intr_frame *f)
       sys_close(fd);
       break;
     }
-
-
   }
   
   //printf ("system call!\n");

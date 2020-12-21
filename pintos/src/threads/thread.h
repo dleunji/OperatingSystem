@@ -5,6 +5,9 @@
 #include <list.h>
 #include <stdint.h>
 #include <threads/synch.h> /* Project #3 */
+#ifdef VM
+#include <vm/page.h>       /* Project #4 */
+#endif
 
 /* States in a thread's life cycle. */
 enum thread_status
@@ -115,6 +118,10 @@ struct thread
     struct file *executing_file;       /* The executable file of process */
     uint8_t *current_esp;              /* The current value of the user program's stackpointer.
                                           A page fault might occur in the kernel, so we might need to store esp. */
+#endif
+#ifdef VM
+   struct supplemental_page_table *supt;  /* Supplemental Page Table*/
+   struct list mmap_list;                 /* List of mmap descriptors*/
 #endif
 
     /* Owned by thread.c. */

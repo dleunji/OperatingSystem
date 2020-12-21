@@ -175,11 +175,13 @@ timer_interrupt (struct intr_frame *args UNUSED)
 {
   ticks++;
   //thread_tick (timer_ticks());
-  if(thread_mlfqs || thread_prior_aging)
+  //if(thread_mlfqs || thread_prior_aging)
+  if(thread_mlfqs)
   //increment recent_cpu of current running thread
     inc_recent_cpu();
   thread_awake(ticks);
-  if(thread_prior_aging || thread_mlfqs){
+  if(thread_mlfqs){
+  //if(thread_prior_aging || thread_mlfqs){
     //recent_cpu is updated in every second
     if(timer_ticks() % TIMER_FREQ == 0){
       update_load_avg();

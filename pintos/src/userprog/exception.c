@@ -1,11 +1,20 @@
 #include "userprog/exception.h"
 #include <inttypes.h>
 #include <stdio.h>
+#include "userprog/pagedir.h"
 #include "userprog/gdt.h"
 #include "userprog/syscall.h"
 #include "threads/interrupt.h"
 #include "threads/thread.h"
 #include "threads/vaddr.h"
+
+#ifdef VM
+#include "vm/page.h"
+#include "vm/frame.h"
+#endif
+
+//limit is 8MB
+#define MAX_STACK_SIZE 0x800000
 
 /* Number of page faults processed. */
 static long long page_fault_cnt;
@@ -149,13 +158,48 @@ page_fault (struct intr_frame *f)
   not_present = (f->error_code & PF_P) == 0;
   write = (f->error_code & PF_W) != 0;
   user = (f->error_code & PF_U) != 0;
-   /*
-  if(!user||is_kernel_vaddr(fault_addr)){
-     sys_exit(-1);
-  }
-  */
-  sys_exit(-1);
+  
+  #if VM
+   /* Virtual Memory Page Fault Handling */
 
+   //1. Obtain the page where the page faults occur. 
+   struct thread *cur = thread_current();
+   void *fault_page = (void*) pg_round_down(fault_addr);
+
+   //try to write to Read-only region
+   if(!not_present){
+      goto PAGE_FAULT_VIOLATED_ACCESS;
+   }
+
+   /* To know where the stack pointer is. 
+   If the page fault occurs in user mode, we can obtain it through intr_frame.
+   Otherwise(in kernel mode), through esp at the beginning of system call. */
+   void *esp = user ? f->esp : cur->current_esp;
+
+   /* For Stack Growth */
+   bool on_stack_frame = (esp <= fault_addr || fault_addr == f->esp - 4 || fault_addr == f->esp - 32);
+   bool is_stack_addr = (PHYS_BASE - MAX_STACK_SIZE <= fault_addr && fault_addr < PHYS_BASE);
+   if(on_stack_frame && is_stack_addr){
+      //If there's no page entry in upplementary page table, add new page entry.
+      if(vm_supt_has_entry(cur->supt, fault_page) == false)
+         vm_supt_install_zero(cur->supt, fault_page);
+   } 
+   if(!vm_load_page(cur->supt,cur->pagedir, fault_page)){
+      goto PAGE_FAULT_VIOLATED_ACCESS;
+   }
+
+   return;
+//LABEL
+PAGE_FAULT_VIOLATED_ACCESS:
+#endif
+   /* That is kernel mode. 
+   A page fault in kernel mode copies eax value to eip.
+   and sets eax to 0xffffffff. */
+   if(!user){
+      f->eip = (void *) f->eax;
+      f->eax = 0xffffffff;
+      return;
+   }
   /* To implement virtual memory, delete the rest of the function
      body, and replace it with code that brings in the page to
      which fault_addr refers. */
