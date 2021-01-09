@@ -73,8 +73,6 @@ bool expand_stack (struct supplemental_page_table *supt, void *upage){
         return false;
     }
 }
-/* Install a new page on the supplemental page table.
-The status of page is FROM FILESYS.*/
 bool vm_supt_install_filesys(struct supplemental_page_table *supt, void *upage,
     struct file *file, off_t offset, uint32_t read_bytes, uint32_t zero_bytes,bool writable){
         struct supplemental_page_table_entry *supte;

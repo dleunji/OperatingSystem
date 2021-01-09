@@ -19,3 +19,22 @@ Extension host agent listening on 39341
 bash: cannot set terminal process group (-1): Inappropriate ioctl for device
 bash: no job control in this shell
 [16:14:00] [127.0.0.1][39bbab2a][ExtensionHostConnection] <4187211> Launched Extension Host Process.
+Error: write EPIPE
+    at WriteWrap.onWriteComplete [as oncomplete] (internal/stream_base_commons.js:83:16) {
+  errno: 'EPIPE',
+  code: 'EPIPE',
+  syscall: 'write'
+}
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
+    at process.emit (events.js:200:13)
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/sogang/under/cse20170101/.vscode-server/bin/91899dcef7b8110878ea59626991a18c8a6a1b3e/out/bootstrap.js:5:246)
+    at process.emit (events.js:200:13)
+[18:58:37] [127.0.0.1][23d315af][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[21:58:32] [127.0.0.1][39bbab2a][ExtensionHostConnection] <4187211> Extension Host Process exited with code: 0, signal: null.
+Last EH closed, waiting before shutting down
+[21:58:32] Last EH closed, waiting before shutting down
+[21:58:37] [127.0.0.1][23d315af][ManagementConnection] The reconnection grace time of 3h has expired, so the connection will be disposed.
+Last EH closed, shutting down
+[22:03:32] Last EH closed, shutting down
